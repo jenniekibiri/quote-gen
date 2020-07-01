@@ -35,7 +35,7 @@
 
 <div class="row mt-5 ">
     <div class="col-md-6 offset-md-3">
-        <input type="submit"class="btn  btn-primary btn-block" onclick="generateQuote(); generateCustomQuote()" value="Generate Quotes">
+        <input type="submit"class="btn  btn-primary btn-block" onclick="generateCustomQuote()" value="Generate Quotes">
     </div>
 </div>
 
@@ -45,7 +45,9 @@
         <div class="card">
             <div class="card-body">
               <blockquote class="blockquote mb-0">
-                <p id="quoteDisplay"></p>
+                <div id="quoteDisplay">
+                
+                </div>
                 <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
               </blockquote>
             </div>
@@ -54,7 +56,14 @@
        </div>
    </div>
 
+
   </section>
+  <section>
+    <p id="five">
+
+    </p>
+  </section>
+  <script src="../algo.js"></script>
   <script src="../random.js"></script>
   <script src="../custom.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

@@ -19,14 +19,11 @@ const end=[
  
 //real function (not commented out)
 function generateQuote() {
-          
-    //random generation each function call:
-    var randomStart = Math.floor(Math.random()*beginning.length);
-    var randomMiddle = Math.floor(Math.random()*middle.length);
-    var randomEnd = Math.floor(Math.random()*end.length);
-    //put the random text in the p tag with id of 'target':
-    document.getElementById('quoteDisplay').innerHTML =  beginning[randomStart]  +  middle[randomMiddle] + end[randomEnd] ;
-    
-    
+    deleteChild()
+     const quotes=randomNumber(funny.beginning)  +randomNumber(funny.middle)  + randomNumber(funny.end)   ;
+    var p= document.createElement("p");
+    var text = document.createTextNode(quotes);
+    p.appendChild(text);
+    document.getElementById('quoteDisplay').appendChild(p);
+
 }
-generateQuote()

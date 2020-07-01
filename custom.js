@@ -13,8 +13,6 @@ const funny = {
          ' Once you let mo-fos slide, they start to think they can ice skate',
          ' I almost gave a f—k. Scared the sh— out of myself'
      ],
-
-
       end:[
      ' I\'m not lazy, I\'m waiting for inspiration to hit me... should be here any time now ',
       'Our phones fall, we panic. Our friends fall, we laugh. - coolfunnyquotes.com ',
@@ -32,7 +30,6 @@ const life ={
          ' The purpose of our lives is to be happy.”'
 
      ],
-
     middle :[
          ' If your wife wants to learn to drive, don\'t stand in her way',
          ' If you want to live a happy life, tie it to a goal, not to people or things',
@@ -45,44 +42,76 @@ const life ={
      'Don’t settle for what life gives you; make life better and build something',
      'You never really learn much from hearing yourself speak'
      ]
-
     }
 
-function generateCustomQuote() {
-    valueSelected = document.querySelector('#inputGroupSelect01'); 
-                      
-    output = valueSelected.options[valueSelected.selectedIndex].value; 
-console.log(output)
-    if(output==="1"  ){
-        
-     //random generation each function call:
-    var funnyStart = Math.floor(Math.random()*funny.beginning.length);
-    var funnyMiddle = Math.floor(Math.random()*funny.middle.length);
-    var funnyEnd = Math.floor(Math.random()*funny.end.length);
-    //put the random text in the p tag with id of 'target':
-   const quotes=funny.beginning[funnyStart]  + funny.middle[funnyMiddle]  + funny.end[funnyEnd] ;
-console.log(quotes)
-   quantity = document.querySelector('#quantity').value; 
-   for (i = 1; i < quantity; i++) {
-       var p= document.createElement("p");
-       var text = document.createTextNode(quotes);
-       p.appendChild(text);
-       document.getElementById('quoteDisplay').appendChild(p);
+    var randomNumber=  function(arr) {
+        var result =[]
+     const quantity = Number(document.querySelector('#quantity').value);
+     if(quantity>1){
+         console.log(quantity)
      }
-    }else if (output==="2"){
+    for(var i=1; i<=quantity; i++) {
+        result.push(arr[Math.floor(Math.random() *arr.length)]);
+       }
+       return result
+    }
+
+    function deleteChild() { 
+        var e = document.getElementById("quoteDisplay"); 
+        var first = e.firstElementChild; 
+        while (first) { 
+            first.remove(); 
+            first = e.firstElementChild; 
+        } 
+    } 
+
+    function generateCustomQuote() {
+    var valueSelected = document.querySelector('#inputGroupSelect01'); 
+     var output = valueSelected.options[valueSelected.selectedIndex].value; 
     
-    //random generation each function call:
-    var randomStart = Math.floor(Math.random()*life.beginning.length);
-    var randomMiddle = Math.floor(Math.random()*life.middle.length);
-    var randomEnd = Math.floor(Math.random()*life.end.length);
-    //put the random text in the p tag with id of 'target':
-        const quotes = life.beginning[randomStart]  + life.middle[randomMiddle] + life.end[randomEnd];
-        quantity = document.querySelector('#quantity').value; 
-        for (i = 1; i < quantity; i++) {
+    if (output=="1"){
+    var quotes1 = randomNumber(funny.beginning)
+    var quotes2= randomNumber(funny.middle) 
+    var quotes3= randomNumber(funny.end);
+       
+   
+    const quotes = [quotes1 +quotes2+quotes3]
+
+    quotes.forEach(quote=>{
+             deleteChild()
+ 
             var p= document.createElement("p");
-            var text = document.createTextNode(quotes);
+            
+            var text = document.createTextNode(quote);
             p.appendChild(text);
             document.getElementById('quoteDisplay').appendChild(p);
-          }
+        })
+    
        }
-    }
+
+        else if (output=="2"){ 
+            var quotes1 = randomNumber(life.beginning)
+            var quotes2= randomNumber(life.middle) 
+            var quotes3= randomNumber(life.end);
+               
+           
+            const quotes = [quotes1 +quotes2+quotes3]
+            quotes.forEach(quote=>{
+                     deleteChild()
+                
+                    var p= document.createElement("p");
+                   
+
+                    var text = document.createTextNode(quote);
+                    p.appendChild(text);
+                    document.getElementById('quoteDisplay').appendChild(p);
+            })
+     
+           }
+           
+           else{
+               generateQuote();
+           }
+        }
+    
+    
