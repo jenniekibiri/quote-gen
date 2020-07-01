@@ -1,20 +1,20 @@
 const funny = {
 
     beginning:[
-        ' Yesterday I did nothing and today I\'m finishing what I did yesterday',
+        ' beginning',
          ' Studying means 10% reading and 90% complaining to your friends that you have to study',
-         ' Always laugh when you can. It is cheap medicine ',
+         ' Always laugh when you can It is cheap medicine ',
          ' I\'ve decided I\'m not old. I\'m 25 plus shipping and handling'
      ],
 
     middle :[
-         ' I\'m not lazy, I\'m on power saving mode',
+         ' middle',
          '  Friends are chocolate chips in the cookie of life',
          ' Once you let mo-fos slide, they start to think they can ice skate',
          ' I almost gave a f—k. Scared the sh— out of myself'
      ],
       end:[
-     ' I\'m not lazy, I\'m waiting for inspiration to hit me... should be here any time now ',
+     ' end ',
       'Our phones fall, we panic. Our friends fall, we laugh. - coolfunnyquotes.com ',
       ' our life can\'t fall apart if you never had it together',
       ' Always be yourself, unless you can be Beyonce then always be Beyonce'
@@ -47,11 +47,9 @@ const life ={
     var randomNumber=  function(arr) {
         var result =[]
      const quantity = Number(document.querySelector('#quantity').value);
-     if(quantity>1){
-         console.log(quantity)
-     }
+
     for(var i=1; i<=quantity; i++) {
-        result.push(arr[Math.floor(Math.random() *arr.length)]);
+        result.push(arr[Math.floor(Math.random() * arr.length)]);
        }
        return result
     }
@@ -68,15 +66,28 @@ const life ={
     function generateCustomQuote() {
     var valueSelected = document.querySelector('#inputGroupSelect01'); 
      var output = valueSelected.options[valueSelected.selectedIndex].value; 
+     const quantity = Number(document.querySelector('#quantity').value);
     
     if (output=="1"){
-    var quotes1 = randomNumber(funny.beginning)
-    var quotes2= randomNumber(funny.middle) 
-    var quotes3= randomNumber(funny.end);
+  var quotes = [randomNumber(funny.beginning) +randomNumber(funny.middle) + randomNumber(funny.end)]
        
    
-    const quotes = [quotes1 +quotes2+quotes3]
+    
+if(quantity >1){
+    const quotes1 = randomNumber (funny.beginning)
+ const quotes2 = randomNumber(funny.middle)
+  const quotes3 = randomNumber (funny.middle)
+    var quotes = [quotes1.concat(quotes2,quotes3)]
+    quotes.forEach(quote=>{
+        deleteChild()
 
+       var p= document.createElement("p");
+       
+       var text = document.createTextNode(quote);
+       p.appendChild(text);
+       document.getElementById('quoteDisplay').appendChild(p);
+   })
+}else{
     quotes.forEach(quote=>{
              deleteChild()
  
@@ -88,7 +99,7 @@ const life ={
         })
     
        }
-
+    }
         else if (output=="2"){ 
             var quotes1 = randomNumber(life.beginning)
             var quotes2= randomNumber(life.middle) 
