@@ -21,7 +21,7 @@ middle:[
 //real function (not commented out)
 function generateQuote() {
     deleteChild()
-     const quotes=randomNumber(rand.beginning)  +randomNumber(rand.middle)  + randomNumber(rand.end)   ;
+     const quotes=getMeRandomElements(rand.beginning)  +getMeRandomElements(rand.middle)  + getMeRandomElements(rand.end)   ;
     var p= document.createElement("p");
     var text = document.createTextNode(quotes);
     p.appendChild(text);
