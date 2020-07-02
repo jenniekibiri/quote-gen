@@ -15,13 +15,22 @@ middle:[
  end:[
      ' The universe is a pretty big place. If it\'s just us, seems like an awful waste of space.',
     '  The Universe is under no obligation to make sense to you.',
-    ' Yesterday I did nothing and today I\'m finishing what I did yesterday. '
+    ' Yesterday I did nothing and today I\'m finishing what I did yesterday. ',
+    ' The purpose of our lives is to be happy.”'
 ]
 }
 //real function (not commented out)
+var randomNumber=  function(arr) {
+            var result =[]
+        
+    
+            result.push(arr[Math.floor(Math.random() * arr.length)]);
+           
+           return result
+        }
 function generateQuote() {
     deleteChild()
-     const quotes=getMeRandomElements(rand.beginning)  +getMeRandomElements(rand.middle)  + getMeRandomElements(rand.end)   ;
+     const quotes=randomNumber(rand.beginning)  +randomNumber(rand.middle)  + randomNumber(rand.end)   ;
     var p= document.createElement("p");
     var text = document.createTextNode(quotes);
     p.appendChild(text);
