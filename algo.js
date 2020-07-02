@@ -1,47 +1,56 @@
 const funny = {
 
     beginning:[
-        ' Yesterday I did nothing and today I\'m finishing what I did yesterday',
-         ' Studying means 10% reading and 90% complaining to your friends that you have to study',
-         ' Always laugh when you can. It is cheap medicine ',
-         ' I\'ve decided I\'m not old. I\'m 25 plus shipping and handling'
+        'working hard',
+        'creating goals',
+        'working in teams',
+        'Asking for help'
+        
      ],
 
     middle :[
-         ' I\'m not lazy, I\'m on power saving mode',
-         '  Friends are chocolate chips in the cookie of life',
-         ' Once you let mo-fos slide, they start to think they can ice skate',
-         ' I almost gave a f—k. Scared the sh— out of myself'
+        ' is something we do',
+        ' is what we do',
+        ' is what  best',
+        ' is a best practise'
+
+        
      ],
       end:[
-     ' I\'m not lazy, I\'m waiting for inspiration to hit me... should be here any time now ',
-      'Our phones fall, we panic. Our friends fall, we laugh. - coolfunnyquotes.com ',
-      ' our life can\'t fall apart if you never had it together',
-      ' Always be yourself, unless you can be Beyonce then always be Beyonce'
+    
+' when we want to be successful ',
+' when we want to achieve something',
+' when you wanna build great product faster',
+'when you want to move faster '
+
      ]
 
 
     }
     const life ={
         beginning:[
-            ' Me and my wife lived happily for twenty years then we met',
-             'Live for each second without hesitation',
-             ' You only live once, but if you do it right, once is enough',
-             ' The purpose of our lives is to be happy.”'
-    
-         ],
-        middle :[
-             ' If your wife wants to learn to drive, don\'t stand in her way',
-             ' If you want to live a happy life, tie it to a goal, not to people or things',
-             ' In order to write about life first you must live it',
-             ' Turn your wounds into wisdom.'
-         ],
-          end:[
-         ' Marriage is like a walk in the park... Jurrasic Park - coolfunnyquotes.com ',
-         ' In order to write about life first you must live it',
-         'Don’t settle for what life gives you; make life better and build something',
-         'You never really learn much from hearing yourself speak'
-         ]
+            ' Happiness is a choice',
+            'life is what you make it',
+            'life is an experiment',
+            'Life is really simple'
+        
+        
+        ],
+        middle:[
+          
+        '  If you choose  not to submit to your failures',
+        '  you cannot choose what happens ',
+        '  make it beautiful',
+        '  make it simple and cheerful'
+          
+        ],
+         end:[
+            ' then you will have much success in your life.' ,    
+            '  no matter where you come from  ',
+            '  you will not be successsful',
+            ' you chose to make it full of happiness and joy. '    
+            
+        ]
         }
     
 var getMeRandomElements = function(arr) {
