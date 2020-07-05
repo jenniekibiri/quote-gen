@@ -1,0 +1,22 @@
+{
+  "name": "quote-generator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "algo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jenniekibiri/quote-gen.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jenniekibiri/quote-gen/issues"
+  },
+  "homepage": "https://github.com/jenniekibiri/quote-gen#readme",
+  "dependencies": {
+    "eslint": "^7.4.0"
+  }
+}
